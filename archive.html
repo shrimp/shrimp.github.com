@@ -1,10 +1,14 @@
 ---
-layout: page
-title : Archive
-header : Post Archive
-group: navigation
+layout: default
+title: Archive
 ---
-{% include JB/setup %}
 
-{% assign posts_collate = site.posts %}
-{% include JB/posts_collate %}
+<h2>Archive</h2>
+
+<div id="post_links">
+    <ul>
+        {% for post in site.posts %}
+        <li><span>{{ post.date | date_to_string }}</span>  <a href="{{ post.url }}">{{ post.title }}</a></li>
+        {% endfor %}
+    </ul>
+</div>

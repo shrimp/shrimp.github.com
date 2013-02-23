@@ -1,5 +1,10 @@
 ---
 layout: default
 ---
-{% include JB/setup %}
-{% include themes/twitter/page.html %}
+<div class="post">
+    <h3><a href="/blog{{ post.url }}">{{ page.title }}</a></h3>
+  
+    <div class="body">
+        {{ content }}
+    </div>
+</div>

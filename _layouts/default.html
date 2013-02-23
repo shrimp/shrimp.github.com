@@ -1,6 +1,135 @@
----
-theme :
-  name : twitter
----
-{% include JB/setup %}
-{% include themes/twitter/default.html %}
+<!DOCTYPE html>
+<html>
+<head>
+
+   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+   <title>{{ page.title }}</title>
+   <meta name="author" content="Ying Guo" />
+
+   <!-- syntax highlighting CSS -->
+   <link rel="stylesheet" href="css/syntax.css" type="text/css" />
+
+   <!-- Twitter Bootstrap CSS -->
+   <!-- link rel="stylesheet" href="/blog/css/bootstrap.min.css" type="text/css" media="screen, projection" / -->
+   <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/css/bootstrap-combined.min.css" rel="stylesheet">
+
+   <!-- Typekit -->
+   <!-- script type="text/javascript" src="/blog/js/bootstrap.min.js"></script -->
+   <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/js/bootstrap.min.js"></script>
+   <script type="text/javascript" src="http://use.typekit.com/jpd0pfm.js"></script>
+   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+<!-- --------------------------------------------------------------------------------- 
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+  <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
+
+  {% if page.description %}
+  <meta name="description" content="{{ page.description }}" />
+  {% endif %}
+  <meta name="author" content="{{ site.author }}">
+
+  <!--[if lt IE 9]>
+    <!-- script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+  <![endif]-->
+
+  {% if site.feedburner %}
+  <!-- link href="http://feeds.feedburner.com/{{ site.feedburner.id }}" rel="alternate" title="{{ site.title }}" type="application/atom+xml" />
+  {% endif %}
+
+  {% if site.google_analytics %}
+  <!-- google analytics async -->
+  <!-- script type="text/javascript">
+  <!--  var _gaq = _gaq || [];
+  <!--  _gaq.push(['_setAccount', '{{ site.google_analytics.account }}']);
+  <!--  _gaq.push(['_trackPageview']);
+  <!--  (function() {
+  <!--    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  <!--    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  <!--    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  <!--  })();
+  <!-- /script -->
+  <!-- {% endif %}
+
+  <!-- link rel="shortcut icon" href="/favicon.ico"/>
+  <!-- script src="/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+
+ --------------------------------------------------------------------------------- -->
+</head>
+
+<body>
+
+  <div id="page">
+
+   <!-- Twitter Bootstrap navbar -->
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+
+          <a class="brand" href="http://shrimp.github.com/">Ying Guo</a>
+          <div class="nav-collapse">
+            <ul class="nav pull-right">
+              <li><a href="/">Home</a></li>
+              <li><a href="/blog">Blog</a></li>
+              <li><a href="/about">About</a></li>
+              <li><a href="/trends">Trends</a></li>
+              <li><a href="/categories">Categories</a></li>
+              <li><a href="/auth/github">Sign in with Github</a></li>
+            </ul>
+            <!-- form method="get" action="http://www.google.com/search" class="navbar-search pull-right">
+              <input type="text" name="q" class="span2 search-query" placeholder="Search" maxlength="255" value="">
+              <input name="sitesearch" type="hidden" value="{{ site.domain }}">
+            </form -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main content area -->
+
+    <div class="container">
+      <div class="content">
+        <header class="page-header">
+          <h1>{{ site.title }}</h1>
+        </header>
+        <div class="row">
+          <div id="content" class="span9">
+            {{ content }}
+          </div>
+          <nav class="span3">
+            <div id="social networks" class="rss twitter" >
+              <a href="http://feeds.feedburner.com/GitwatcherBlog">
+                <img src="img/icons_32x32px/rss.png" alt="Subscribe to RSS Feed" />
+              </a>
+              <a href="https://twitter.com/shrimp0597">
+                <img src="img/icons_32x32px/twitter_1.png" alt="Follow me on Twitter" />
+              </a>
+            </div>
+            <h3>Recent Posts</h3>
+            <hr />
+            <div id="posts">
+              {% for post in site.posts limit:10%}
+                <p><a href="{{ post.url }}">{{ post.title }}</a></p>
+              {% endfor %}
+              <hr>
+              <p>powered by <a href="https://github.com/mojombo/jekyll">jekyll</a></p>
+            </div>
+          </nav>
+        </div>
+      </div>
+      <hr />
+      {% include footer.html %}
+    </div> 
+
+  </div> 
+
+  <!-- End Main content area -->
+
+</body>
+</html>
+
