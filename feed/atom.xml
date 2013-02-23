@@ -4,22 +4,22 @@ layout: nil
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
  
- <title>GitWatcher Blog</title>
- <link href="http://gitwatcher.com/blog/feed/atom.xml" rel="self"/>
- <link href="http://gitwatcher.com/blog/feed"/>
+ <title>Happy Learning Blog</title>
+ <link href="http://shrimp.github.com/feed/atom.xml" rel="self"/>
+ <link href="http://shrimp.github.com/feed"/>
  <updated>{{ site.time | date_to_xmlschema }}</updated>
- <id>http://gitwatcher.com/blog/feed</id>
+ <id>http://shrimp.github.com/feed</id>
  <author>
-   <name>Luca G. Soave</name>
-   <email>luca.soave@gmail.com</email>
+     <name>Ying Guo</name>
+     <email>shrimp0597@gmail.com</email>
  </author>
 
  {% for post in site.posts %}
  <entry>
    <title>{{ post.title }}</title>
-   <link href="http://gitwatcher.com/blog{{ post.url }}"/>
+   <link href="http://shrimp.github.com/blog{{ post.url }}"/>
    <updated>{{ post.date | date_to_xmlschema }}</updated>
-   <id>http://gitwatcher.com/blog{{ post.id }}.html</id>
+   <id>http://shrimp.github.com/blog{{ post.id }}.html</id>
    <content type="html">{{ post.content | xml_escape }}</content>
  </entry>
  {% endfor %}
